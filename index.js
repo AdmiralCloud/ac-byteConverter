@@ -18,7 +18,7 @@ const byteConverter = function() {
   * @param value FLOAT byte value
    */
   const format = function(value, unit, options) {
-    if (!value) return { message: 'valueRequired' }
+    if (!_.isNil(value)) return { message: 'valueRequired' }
     if (!_.isNumber(value)) return { message: 'valueMustBeANumber' }
 
     if (_.isObject(unit)) {
@@ -74,7 +74,7 @@ const byteConverter = function() {
   If you send a non-string value, the value is just returned
   */
   const parse = function(value, options) {
-    if (!value) return { message: 'valueRequired' }
+    if (!_.isNil(value)) return { message: 'valueRequired' }
     if (_.isNumber(value)) return value
     if (!_.isString(value)) return { message: 'valueMustBeAString' }
 

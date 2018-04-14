@@ -81,7 +81,7 @@ const byteConverter = function() {
     if (_.isNumber(value)) return value
     if (!_.isString(value)) return { message: 'valueMustBeAString' }
 
-    let regex = /(\d*)(\D*)/
+    let regex = /([0-9.]*)(\D*)/
     let res = value.match(regex) // 1KiB
     let orgValue = _.trim(res[1])
     let unit = _.trim(res[2])

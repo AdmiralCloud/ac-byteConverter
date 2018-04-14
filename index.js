@@ -86,6 +86,9 @@ const byteConverter = function() {
     let orgValue = _.trim(res[1])
     let unit = _.trim(res[2])
 
+    // return zero value ('0' -> 0)
+    if (parseInt(orgValue) === 0) return parseInt(orgValue)
+
     options = options || {}
     if (!_.get(options, 'system')) {
       if (_.endsWith(unit, 'iB')) {

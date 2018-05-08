@@ -26,7 +26,7 @@ const parseTests = [
   { name: '1GB to 1e9 bytes', value: '1GB', expected: 1e9 },
   { name: '1TB to 1e12 bytes', value: '1TB', expected: 1e12 },
   { name: '50GiB to 53.687.091.200 bytes', value: '50GiB', expected: 53687091200 },
-  { name: 'Parse float value 1.5MB to 1.5e6', value: '1.5MB', expected: 1.5e6 },
+  { name: 'Parse float value 1.5MB to 1.5e6', value: '1.5MB', expected: 1.5e6 }
 ]
 
 const errorFormatTests = [

@@ -3,22 +3,22 @@
   "author": "Mark Poepping (https://www.mmpro.de)",
   "license": "MIT",
   "repository": "mmpro/ac-byteconverter",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.x"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "expect": "^22.4.3",
-    "mocha": "^5.1.1",
-    "mocha-jenkins-reporter": "^0.3.12",
-    "mocha-junit-reporter": "^1.17.0",
-    "mocha-multi-reporters": "^1.1.7"
+    "eslint": "^4.x",
+    "eslint-config-standard": "^11.x",
+    "eslint-plugin-import": "^2.x",
+    "eslint-plugin-node": "^6.x",
+    "eslint-plugin-promise": "^3.x",
+    "eslint-plugin-standard": "^3.x",
+    "expect": "^22.x",
+    "mocha": "^5.x",
+    "mocha-jenkins-reporter": "^0.x",
+    "mocha-junit-reporter": "^1.x",
+    "mocha-multi-reporters": "^1.x"
   },
   "scripts": {
     "test": "mocha --reporter spec",

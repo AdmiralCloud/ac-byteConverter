@@ -1,4 +1,4 @@
-const _ = require('lodash')
+const _ = require('lodash');
 
 const byteConverter = function() {
   const valueMap = [
@@ -9,118 +9,154 @@ const byteConverter = function() {
     { exp: 15, si: 'PB', iec: 'PiB', iecExp: 50 },
     { exp: 18, si: 'EB', iec: 'EiB', iecExp: 60 },
     { exp: 21, si: 'ZB', iec: 'ZiB', iecExp: 70 },
-    { exp: 24, si: 'YB', iec: 'YiB', iecExp: 80 }
-  ]
+    { exp: 24, si: 'YB', iec: 'YiB', iecExp: 80 },
+  ];
 
   /**
-  * Converts value into unit.
-  * If unit is not given, try to determine based on power of ten
-  * @param value FLOAT byte value
+   * Converts value into unit.
+   * If unit is not given, try to determine based on power of ten
+   * @param value FLOAT byte value
    */
   const format = function(value, unit, options) {
-    if (_.isNil(value)) return { message: 'valueRequired' }
-    if (!_.isNumber(value)) return { message: 'valueMustBeANumber' }
+    if(_.isNil(value)) {
+      return { message: 'valueRequired' };
+    }
+
+    if(!_.isNumber(value)) {
+      return { message: 'valueMustBeANumber' };
+    }
 
     // return 0 value as 0
-    if (value === 0) return value.toString()
+    if(value === 0) {
+      return value.toString();
+    }
 
-    if (_.isObject(unit)) {
-      options = unit
-      unit = null
+    if(_.isObject(unit)) {
+      options = unit;
+      unit    = null;
     }
 
     // define default options
-    options = options || {}
-    if (!_.get(options, 'system')) {
+    options = options || {};
+    if(!_.get(options, 'system')) {
       // detect system (check if there is an i)
-      if (unit && _.endsWith(unit, 'iB')) {
-        _.set(options, 'system', 'iec')
-      }
-      else {
-        _.set(options, 'system', 'si')
+      if(unit && _.endsWith(unit, 'iB')) {
+        _.set(options, 'system', 'iec');
+      } else {
+        _.set(options, 'system', 'si');
       }
     }
 
-    let base = 10
-    if (_.get(options, 'system') === 'iec') base = 2
+    let base = 10;
 
-    let map
-    if (!unit) {
-      const autoDetectRegex = /(\d.*\+)(\d{1,2})/
-      let autoDetect = value.toExponential() // 5.079899957e+9
-      let expArray = autoDetect.match(autoDetectRegex)
-      let exp = Math.floor(parseInt(_.get(expArray, '[2]')) / 3) * 3
-      map = _.find(valueMap, { exp: exp })
-      unit = _.get(map, _.get(options, 'system'))
+    if(_.get(options, 'system') === 'iec') {
+      base = 2;
     }
-    else {
-      if (_.get(options, 'system') === 'iec') {
-        map = _.find(valueMap, { iec: unit })
-      }
-      else {
-        map = _.find(valueMap, { si: unit })
+
+    let map;
+
+    if(!unit) {
+      const autoDetectRegex = /(\d.*\+)(\d{1,2})/;
+      const autoDetect      = value.toExponential(); // 5.079899957e+9
+      const expArray        = autoDetect.match(autoDetectRegex);
+      const exp             = Math.floor(parseInt(_.get(expArray, '[2]')) / 3) * 3;
+      map                   = _.find(valueMap, { exp: exp });
+      unit                  = _.get(map, _.get(options, 'system'));
+    } else {
+      if(_.get(options, 'system') === 'iec') {
+        map = _.find(valueMap, { iec: unit });
+      } else {
+        map = _.find(valueMap, { si: unit });
       }
     }
-    if (!map) return { message: 'unitInvalid' }
+
+    if(!map) {
+      return { message: 'unitInvalid' };
+    }
 
     // convert
-    let exp = _.get(map, 'exp')
-    if (_.get(options, 'system') === 'iec') exp = _.get(map, 'iecExp')
+    let exp = _.get(map, 'exp');
 
-    let divider = Math.pow(base, exp)
-    value = _.round(value / divider, _.get(options, 'decimals', 2))
-    return value + unit
-  }
+    if(_.get(options, 'system') === 'iec') {
+      exp = _.get(map, 'iecExp');
+    }
 
-  /*
-  Ingests a "human readable" value and returns value in bytes
-  If you send a non-string value, the value is just returned
-  */
+    const divider = Math.pow(base, exp);
+    value         = _.round(value / divider, _.get(options, 'decimals', 2));
+
+    return value + unit;
+  };
+
+  /**
+   * Ingests a "human readable" value and returns value in bytes
+   * If you send a non-string value, the value is just returned
+   */
   const parse = function(value, options) {
-    if (_.isNil(value)) return { message: 'valueRequired' }
-    if (_.isNumber(value)) return value
-    if (!_.isString(value)) return { message: 'valueMustBeAString' }
+    if(_.isNil(value)) {
+      return { message: 'valueRequired' };
+    }
 
-    let regex = /([0-9.]*)(\D*)/
-    let res = value.match(regex) // 1KiB
-    let orgValue = _.trim(res[1])
-    let unit = _.trim(res[2])
+    if(_.isNumber(value)) {
+      return value;
+    }
+
+    if(!_.isString(value)) {
+      return { message: 'valueMustBeAString' };
+    }
+
+    const regex    = /([0-9.]*)(\D*)/;
+    const res      = value.match(regex); // 1KiB
+    const orgValue = _.trim(res[1]);
+    const unit     = _.trim(res[2]);
 
     // return zero value ('0' -> 0)
-    if (parseInt(orgValue) === 0) return parseInt(orgValue)
+    if(_.parseInt(orgValue) === 0) {
+      return _.parseInt(orgValue);
+    }
 
-    options = options || {}
-    if (!_.get(options, 'system')) {
-      if (_.endsWith(unit, 'iB')) {
-        _.set(options, 'system', 'iec')
+    options = options || {};
+
+    if(!_.get(options, 'system')) {
+      if(_.endsWith(unit, 'iB')) {
+        _.set(options, 'system', 'iec');
+      } else {
+        _.set(options, 'system', 'si');
       }
-      else {
-        _.set(options, 'system', 'si')
-      }
     }
 
-    let map
-    if (_.get(options, 'system') === 'iec') {
-      map = _.find(valueMap, { iec: unit })
-    }
-    else {
-      map = _.find(valueMap, { si: unit })
-    }
-    if (!map) return { message: 'unitInvalid' }
+    let map;
 
-    let exp = _.get(map, 'exp')
-    if (_.get(options, 'system') === 'iec') exp = _.get(map, 'iecExp')
-    let base = 10
-    if (_.get(options, 'system') === 'iec') base = 2
+    if(_.get(options, 'system') === 'iec') {
+      map = _.find(valueMap, { iec: unit });
+    } else {
+      map = _.find(valueMap, { si: unit });
+    }
 
-    let byteValue = orgValue * Math.pow(base, exp)
-    return byteValue
-  }
+    if(!map) {
+      return { message: 'unitInvalid' };
+    }
+
+    let exp = _.get(map, 'exp');
+
+    if(_.get(options, 'system') === 'iec') {
+      exp = _.get(map, 'iecExp');
+    }
+
+    let base = 10;
+
+    if(_.get(options, 'system') === 'iec') {
+      base = 2;
+    }
+
+    const byteValue = orgValue * Math.pow(base, exp);
+
+    return byteValue;
+  };
 
   return {
-    format,
-    parse
-  }
-}
+    format: format,
+    parse:  parse,
+  };
+};
 
-module.exports = byteConverter()
+module.exports = byteConverter();

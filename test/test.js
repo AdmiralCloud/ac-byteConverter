@@ -3,6 +3,7 @@ const expect = require('expect')
 const byteConverter = require('../index')
 
 const formatTests = [
+  { name: '10 bytes', value: 10, expected: '10B' },
   { name: '1.000 bytes to kb', value: 1000, expected: '1kB' },
   { name: '1.000.000 bytes to MB', value: 1e6, expected: '1MB' },
   { name: '1.000.000.000 bytes to GB', value: 1e9, expected: '1GB' },

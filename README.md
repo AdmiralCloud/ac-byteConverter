@@ -44,3 +44,7 @@ byteConverter.parse('1MiB')
 ## License
 
 MIT
+
+## Current issues/infos
+2018-07-30 
+We are using this fork mmpro/mocha-jenkins-reporter until the packages has been fixed (outdated version is 0.3.12)

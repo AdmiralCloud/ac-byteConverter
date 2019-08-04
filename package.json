@@ -5,20 +5,26 @@
   "repository": "mmpro/ac-byteconverter",
   "version": "0.0.10",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "eslint": "^5.15.1",
-    "eslint-config-standard": "^12.x",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.x",
-    "eslint-plugin-promise": "^4.x",
-    "eslint-plugin-standard": "^4.x",
+    "ac-conventional-changelog-template": "git+https://github.com/mmpro/ac-conventional-changelog-template.git",
+    "corp-semantic-release": "git+https://github.com/mmpro/corp-semantic-release.git",
+    "cz-customizable": "git+https://github.com/mmpro/cz-customizable.git",
+    "eslint": "^6.1.0",
     "expect": "^24.x",
     "mocha": "^6.x",
     "mocha-jenkins-reporter": "github:mmpro/mocha-jenkins-reporter",
     "mocha-junit-reporter": "^1.18.0",
     "mocha-multi-reporters": "^1.1.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".czConfig.js"
+    }
   },
   "scripts": {
     "test": "mocha --reporter spec",

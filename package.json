@@ -5,7 +5,7 @@
   "repository": "mmpro/ac-byteconverter",
   "version": "1.0.1",
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "ac-semantic-release": "^0.1.1",

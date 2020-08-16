@@ -5,13 +5,13 @@
   "repository": "mmpro/ac-byteconverter",
   "version": "1.0.1",
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
-    "ac-semantic-release": "^0.1.1",
-    "eslint": "^6.1.0",
-    "expect": "^25.2.3",
-    "mocha": "^7.1.1"
+    "ac-semantic-release": "^0.2.2",
+    "eslint": "^7.7.0",
+    "expect": "^26.4.0",
+    "mocha": "^8.1.1"
   },
   "scripts": {
     "test": "mocha --reporter spec"

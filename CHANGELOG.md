@@ -1,3 +1,12 @@
+<a name="1.0.4"></a>
+
+## [1.0.4](https://github.com/mmpro/ac-byteconverter/compare/v1.0.3..v1.0.4) (2021-10-09 10:01:46)
+
+
+### Bug Fix
+
+* **Misc:** Moved package to AdmiralCloud account | MP | [61c79a44750267394c36a921fed710cb50c330df](https://github.com/mmpro/ac-byteconverter/commit/61c79a44750267394c36a921fed710cb50c330df)    
+Moved package to AdmiralCloud account
 <a name="1.0.3"></a>
 
 ## [1.0.3](https://github.com/mmpro/ac-byteconverter/compare/v1.0.2..v1.0.3) (2021-10-09 09:39:20)

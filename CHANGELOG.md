@@ -1,3 +1,18 @@
+<a name="1.0.5"></a>
+
+## [1.0.5](https://github.com/mmpro/ac-byteconverter/compare/v1.0.4..v1.0.5) (2023-07-21 13:10:57)
+
+
+### Bug Fix
+
+* **App:** Package updates | MP | [56cbae1d5b4d65de6c0cfa8687c6875970fb1dda](https://github.com/mmpro/ac-byteconverter/commit/56cbae1d5b4d65de6c0cfa8687c6875970fb1dda)    
+Package updates  
+Related issues: [/issues#undefined](https://github.com//issues/undefined)
+### Tests
+
+* **App:** Replace expect with mocha/chai | MP | [506a4570967cba9621411bc33fa5e5da9826fb69](https://github.com/mmpro/ac-byteconverter/commit/506a4570967cba9621411bc33fa5e5da9826fb69)    
+Replace expect with mocha/chai  
+Related issues: [/issues#undefined](https://github.com//issues/undefined)
 <a name="1.0.4"></a>
 
 ## [1.0.4](https://github.com/mmpro/ac-byteconverter/compare/v1.0.3..v1.0.4) (2021-10-09 10:01:46)

@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const expect = require('expect')
+const { expect } = require('chai')
 const byteConverter = require('../index')
 
 const formatTests = [
@@ -53,7 +53,7 @@ describe('TESTING byteConversion', function () {
         let options = _.get(test, 'options', {})
         let unit = _.get(test, 'unit')
         let r = byteConverter.format(test.value, unit, options)
-        expect(r).toEqual(test.expected)
+        expect(r).to.eql(test.expected)
         return done()
       })
     })
@@ -64,7 +64,7 @@ describe('TESTING byteConversion', function () {
       it(test.name, function(done) {
         let options = _.get(test, 'options', {})
         let r = byteConverter.parse(test.value, options)
-        expect(r).toEqual(test.expected)
+        expect(r).to.eql(test.expected)
         return done()
       })
     })
@@ -76,7 +76,7 @@ describe('TESTING byteConversion', function () {
         let options = _.get(test, 'options', {})
         let unit = _.get(test, 'unit')
         let r = byteConverter.format(test.value, unit, options)
-        expect(r).toEqual(test.expected)
+        expect(r).to.eql(test.expected)
         return done()
       })
     })
@@ -87,7 +87,7 @@ describe('TESTING byteConversion', function () {
       it(test.name, function(done) {
         let options = _.get(test, 'options', {})
         let r = byteConverter.parse(test.value, options)
-        expect(r).toEqual(test.expected)
+        expect(r).to.eql(test.expected)
         return done()
       })
     })

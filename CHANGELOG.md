@@ -1,4 +1,13 @@
 
+## [1.0.10](https://github.com/mmpro/ac-byteconverter/compare/v1.0.9..v1.0.10) (2026-02-24 16:05:45)
+
+
+### Bug Fix
+
+* **Misc:** Package updates | MP | [bc0519647f59a5a10cb96a144458319a7010d873](https://github.com/mmpro/ac-byteconverter/commit/bc0519647f59a5a10cb96a144458319a7010d873)    
+Package updates incl ESLint 9 -> 10 and lint fixes  
+Related issues:
+
 ## [1.0.9](https://github.com/mmpro/ac-byteconverter/compare/v1.0.8..v1.0.9) (2026-02-03 08:19:23)
 
 

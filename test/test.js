@@ -50,9 +50,9 @@ describe('TESTING byteConversion', function () {
   describe('FORMAT Tests', function() {
     _.forEach(formatTests, (test) => {
       it(test.name, function(done) {
-        let options = _.get(test, 'options', {})
-        let unit = _.get(test, 'unit')
-        let r = byteConverter.format(test.value, unit, options)
+        const options = _.get(test, 'options', {})
+        const unit = _.get(test, 'unit')
+        const r = byteConverter.format(test.value, unit, options)
         expect(r).to.eql(test.expected)
         return done()
       })
@@ -62,8 +62,8 @@ describe('TESTING byteConversion', function () {
   describe('PARSE Tests', function() {
     _.forEach(parseTests, (test) => {
       it(test.name, function(done) {
-        let options = _.get(test, 'options', {})
-        let r = byteConverter.parse(test.value, options)
+        const options = _.get(test, 'options', {})
+        const r = byteConverter.parse(test.value, options)
         expect(r).to.eql(test.expected)
         return done()
       })
@@ -73,9 +73,9 @@ describe('TESTING byteConversion', function () {
   describe('ERROR FORMAT Tests', function() {
     _.forEach(errorFormatTests, (test) => {
       it(test.name, function(done) {
-        let options = _.get(test, 'options', {})
-        let unit = _.get(test, 'unit')
-        let r = byteConverter.format(test.value, unit, options)
+        const options = _.get(test, 'options', {})
+        const unit = _.get(test, 'unit')
+        const r = byteConverter.format(test.value, unit, options)
         expect(r).to.eql(test.expected)
         return done()
       })
@@ -85,8 +85,8 @@ describe('TESTING byteConversion', function () {
   describe('ERROR PARSE Tests', function() {
     _.forEach(errorParseTests, (test) => {
       it(test.name, function(done) {
-        let options = _.get(test, 'options', {})
-        let r = byteConverter.parse(test.value, options)
+        const options = _.get(test, 'options', {})
+        const r = byteConverter.parse(test.value, options)
         expect(r).to.eql(test.expected)
         return done()
       })

@@ -1,6 +1,8 @@
 # AC ByteConverter
 This tool converts bytes into units like kB (Kilo byte) or KiB (Kibibytes)
 
+[![Node.js CI](https://github.com/AdmiralCloud/ac-byteConverter/actions/workflows/node.js.yml/badge.svg)](https://github.com/AdmiralCloud/ac-byteConverter/actions/workflows/node.js.yml) [![CodeQL](https://github.com/AdmiralCloud/ac-byteConverter/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/AdmiralCloud/ac-byteConverter/actions/workflows/github-code-scanning/codeql)
+
 ## Usage
 
 ***byteConverter.format(value, [unit], [options])***

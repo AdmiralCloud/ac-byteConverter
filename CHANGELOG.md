@@ -1,3 +1,24 @@
+## [1.0.12](https://github.com/mmpro/ac-byteconverter/compare/v1.0.11..v1.0.12) (2026-04-04 08:46:25)
+
+
+### Bug Fix
+
+
+* **App:** Package updates | MP | [854cc92acd4afab87b001a128099e964cf670f51](https://github.com/mmpro/ac-byteconverter/commit/854cc92acd4afab87b001a128099e964cf670f51)    
+Package updates  
+Related issues:
+### Documentation
+
+
+* **App:** Added badges | MP | [c73ab3917c97e054ec176377f6eee1dedcefccb0](https://github.com/mmpro/ac-byteconverter/commit/c73ab3917c97e054ec176377f6eee1dedcefccb0)    
+Added badges  
+Related issues:
+### Chores
+
+
+* **App:** Added Github actions | MP | [369624b42c549597bf89cb0a103df3c3f80eb8e7](https://github.com/mmpro/ac-byteconverter/commit/369624b42c549597bf89cb0a103df3c3f80eb8e7)    
+Added Github actions  
+Related issues:
 
 ## [1.0.11](https://github.com/mmpro/ac-byteconverter/compare/v1.0.10..v1.0.11) (2026-03-21 11:10:06)
 

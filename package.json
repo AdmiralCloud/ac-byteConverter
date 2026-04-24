@@ -3,7 +3,7 @@
   "author": "Mark Poepping (https://www.admiralcloud.com)",
   "license": "MIT",
   "repository": "admiralcloud/ac-byteconverter",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "dependencies": {
     "lodash": "^4.18.1"
   },

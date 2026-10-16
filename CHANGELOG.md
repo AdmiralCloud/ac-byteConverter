@@ -1,3 +1,11 @@
+## [1.0.21](https://github.com/mmpro/ac-byteconverter/compare/v1.0.20..v1.0.21) (2026-10-16 15:06:59)
+
+
+### Bug Fix
+
+
+* **App:** Package updates | MP | [70f9e86ceaf759d70d76779edb3cb26929d54e6e](https://github.com/mmpro/ac-byteconverter/commit/70f9e86ceaf759d70d76779edb3cb26929d54e6e)    
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
 ## [1.0.20](https://github.com/mmpro/ac-byteconverter/compare/v1.0.19..v1.0.20) (2026-08-23 10:46:10)
 
 
